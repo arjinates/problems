@@ -37,6 +37,9 @@ public class SecondLargestIntegerSolution
         return second;
     }
 
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
     public static void PrintArray(int[] array)
     {
         foreach (int number in array)

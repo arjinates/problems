@@ -27,3 +27,6 @@ public class MergeSortedArraySolution
         }
     }
 }
+
+//O(m+n) time complexity
+//O(1) space complexity

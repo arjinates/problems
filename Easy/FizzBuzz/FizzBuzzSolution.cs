@@ -25,3 +25,6 @@ public class FizzBuzzSolution
         return responseList;
     }
 }
+
+//O(n) time complexity
+//O(n) space complexity, eger consola yazdirsaydim O(1) olurdu
