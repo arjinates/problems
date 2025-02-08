@@ -1,0 +1,23 @@
+public class PalindromeNumberSolution{
+    public bool IsPalindrome(int x){ // Time Complexity: O(logn), Space Complexity: O(1)
+        if (x < 0)
+        {
+            return false;
+        }
+
+        int traversedInt = 0
+        int checker = x;
+
+        while (checker > 0){
+            int digit = checker % 10;
+            traversedInt = traversedInt * 10 + digit;
+            checker /= 10;
+        }
+
+        if (traversedInt == x)
+        {
+            return true;
+        }
+        return false;
+    }
+}
