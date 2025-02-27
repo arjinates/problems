@@ -1,5 +1,5 @@
 public class TwoSumV2Solution{
-    public int[] TwoSum(int[] numbers, int target) {
+    public int[] TwoSum(int[] numbers, int target) { // Time Complexity: O(n), Space Complexity: O(1)
         int left = 0;
         int right = numbers.Length - 1;
         
