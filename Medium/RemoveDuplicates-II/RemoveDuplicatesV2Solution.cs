@@ -1,4 +1,4 @@
-public class RemoveDuplicatesV2{
+public class RemoveDuplicatesV2Solution{
     public int RemoveDuplicates(int[] nums) {
         if(nums.Length <= 2) return nums.Length;
 
