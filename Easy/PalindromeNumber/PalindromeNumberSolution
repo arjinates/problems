@@ -5,7 +5,7 @@ public class PalindromeNumberSolution{
             return false;
         }
 
-        int traversedInt = 0
+        int traversedInt = 0;
         int checker = x;
 
         while (checker > 0){
