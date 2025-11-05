@@ -1,16 +1,19 @@
-public class IsSubsequenceSolution {
-    public bool IsSubsequence(string s, string t) { // Time Complexity: O(n), Space Complexity: O(1)
-       int i = 0, j = 0;
+public class IsSubsequenceSolution
+{ // Time Complexity: O(n), Space Complexity: O(1)
+    public bool IsSubsequence(string s, string t)
+    {
+        int sPointer = 0;
+        int tPointer = 0;
 
-       while(i < s.Length && j < t.Length){
-            if (s[i] == t[i])
+        while (sPointer < s.Length && tPointer < t.Length)
+        {
+            if (s[sPointer] == t[tPointer])
             {
-                i++;
+                sPointer++;
             }
-
-            j++;
-       }
-
-       return i == s.Length;
+            tPointer++;
+        }
+        if (sPointer == s.Length) return true;
+        else return false;
     }
 }
