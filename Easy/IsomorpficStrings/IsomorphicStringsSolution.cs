@@ -1,30 +1,27 @@
-public class IsomorphicStringsSolution
-{
-    public bool IsIsomorphic(string s, string t)
-    {
-        var dict = new Dictionary<char, char>();
+public class IsomorphicStringsSolution {
+    public bool IsIsomorphic(string s, string t) {
+        if (s.Length != t.Length) return false;
 
-        for (int i = 0; i < s.Length; i++)
-        {
-            if (dict.ContainsKey(s[i]))
-            {
-                if (dict[s[i]] != t[i])
-                {
-                    return false;
-                }
+        var sToT = new Dictionary<char, char>();
+        var tToS = new Dictionary<char, char>();
+
+        for(int i=0; i<s.Length; i++){
+            char cs = s[i];
+            char ct = t[i];
+
+            if(sToT.TryGetValue(cs, out var mapped)){
+                if(mapped != ct) return false;
             }
-            else
-            {
-                if (dict.ContainsValue(t[i]))
-                {
-                    return false;
+            else{
+                if(tToS.TryGetValue(ct, out var back)){
+                    if(back != cs) return false;
                 }
 
-                dict.Add(s[i], t[i]);
+                sToT[cs] = ct;
+                tToS[ct] = cs;
             }
         }
 
         return true;
     }
-
 }
