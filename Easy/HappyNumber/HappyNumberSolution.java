@@ -2,28 +2,21 @@ import java.util.LinkedList;
 
 class HappyNumberSolution {
     public boolean isHappy(int n) {
-        
-        int slow = n;
-        int fast = n;
-
-        do {
-            slow = square(slow);
-            fast = square(square(fast));
-        } while (slow != fast);
-
-        return slow == 1;
-    }
-    
-     public int square(int num) {
-        
-        int ans = 0;
-        
-        while(num > 0) {
-            int remainder = num % 10;
-            ans += remainder * remainder;
-            num /= 10;
+        if (n == 1 || n == 7) {
+            return true;
         }
-        
-        return ans;
+        else if (n < 10) {
+            return false;
+        }
+
+        int sum = 0;
+
+        while(n > 0){
+            int digit = n % 10;
+            sum += digit * digit;
+            n = n / 10;    
+        }
+
+        return ishappy(sum);
     }
 }
